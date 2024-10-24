@@ -58,8 +58,8 @@ describe('StudentController', () => {
   });
 
   it('should update a student', () => {
-    const updateStudentDto: UpdateStudentDto = { name: 'John Updated', age: 23 };
-    const updatedStudent: Student = { id: 1, name: 'John Updated', age: 23, email: 'john@example.com' };
+    const updateStudentDto: UpdateStudentDto = { name: 'vijay Updated', age: 23 };
+    const updatedStudent: Student = { id: 1, name: 'vijay Updated', age: 23, email: 'vijay@example.com' };
 
     jest.spyOn(studentService, 'update').mockReturnValue(updatedStudent);
 
@@ -70,7 +70,7 @@ describe('StudentController', () => {
   it('should delete a student', () => {
     jest.spyOn(studentService, 'remove').mockReturnValue(true);
 
-    expect(studentController.remove(1)).toEqual(true);
+    expect(studentController.remove(1)).toEqual("Removed is : true");
     expect(studentService.remove).toHaveBeenCalledWith(1);
   });
 });

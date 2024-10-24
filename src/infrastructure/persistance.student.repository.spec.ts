@@ -1,6 +1,6 @@
 import { PersistanceStudentRepository } from 'src/infrastructure/persistance.student.repository';
-import { CreateStudentDto, UpdateStudentDto } from 'src/core/domain/student.dto';
-import { Student } from 'src/core/domain/studentEntity.interface';
+import { CreateStudentDto, UpdateStudentDto } from '../core/domain/student.dto';
+import { Student } from '../core/domain/studentEntity.interface';
 
 describe('PersistanceStudentRepository', () => {
   let inMemoryStudentRepository: PersistanceStudentRepository;
@@ -32,17 +32,17 @@ describe('PersistanceStudentRepository', () => {
   });
 
   it('should update a student', () => {
-    const createStudentDto: CreateStudentDto = { name: 'John', age: 22, email: 'john@example.com' };
+    const createStudentDto: CreateStudentDto = { name: 'vijay', age: 27, email: 'vijay@example.com' };
     const createdStudent = inMemoryStudentRepository.create(createStudentDto);
 
-    const updateStudentDto: UpdateStudentDto = { name: 'John Updated', age: 23 };
+    const updateStudentDto: UpdateStudentDto = { name: 'vijay Updated', age: 27 };
     const updatedStudent = inMemoryStudentRepository.update(createdStudent.id, updateStudentDto);
 
     expect(updatedStudent).toEqual({ id: createdStudent.id, ...createStudentDto, ...updateStudentDto });
   });
 
   it('should delete a student', () => {
-    const createStudentDto: CreateStudentDto = { name: 'John', age: 22, email: 'john@example.com' };
+    const createStudentDto: CreateStudentDto = { name: 'vijay', age: 27, email: 'vijay@example.com' };
     const createdStudent = inMemoryStudentRepository.create(createStudentDto);
 
     expect(inMemoryStudentRepository.remove(createdStudent.id)).toBe(true);

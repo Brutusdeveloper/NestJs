@@ -19,7 +19,7 @@ describe('StudentService', () => {
   });
 
   it('should create a student', () => {
-    const createStudentDto: CreateStudentDto = { name: 'John', age: 22, email: 'john@example.com' };
+    const createStudentDto: CreateStudentDto = { name: 'John', age: 22, email: 'vijay@example.com' };
     const createdStudent: Student = { id: 1, ...createStudentDto };
     
     jest.spyOn(studentRepository, 'create').mockReturnValue(createdStudent);
@@ -29,7 +29,7 @@ describe('StudentService', () => {
   });
 
   it('should find all students', () => {
-    const students: Student[] = [{ id: 1, name: 'John', age: 22, email: 'john@example.com' }];
+    const students: Student[] = [{ id: 1, name: 'vijay', age: 22, email: 'vijay@example.com' }];
     
     jest.spyOn(studentRepository, 'findAll').mockReturnValue(students);
 
@@ -38,7 +38,7 @@ describe('StudentService', () => {
   });
 
   it('should find a student by ID', () => {
-    const student: Student = { id: 1, name: 'John', age: 22, email: 'john@example.com' };
+    const student: Student = { id: 1, name: 'vijay', age: 22, email: 'vijay@example.com' };
     
     jest.spyOn(studentRepository, 'findById').mockReturnValue(student);
 
@@ -48,7 +48,7 @@ describe('StudentService', () => {
 
   it('should update a student', () => {
     const updateStudentDto: UpdateStudentDto = { name: 'John Updated', age: 23 };
-    const updatedStudent: Student = { id: 1, name: 'John Updated', age: 23, email: 'john@example.com' };
+    const updatedStudent: Student = { id: 1, name: 'vijay Updated', age: 23, email: 'vijay@example.com' };
     
     jest.spyOn(studentRepository, 'update').mockReturnValue(updatedStudent);
 
