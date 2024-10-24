@@ -1,4 +1,4 @@
-import { PersistanceStudentRepository } from 'src/infrastructure/persistance.student.repository';
+import { PersistanceStudentRepository } from './persistance.student.repository';
 import { CreateStudentDto, UpdateStudentDto } from '../core/domain/student.dto';
 import { Student } from '../core/domain/studentEntity.interface';
 
