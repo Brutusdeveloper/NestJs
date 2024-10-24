@@ -6,7 +6,7 @@ import { Student } from '../core/domain/studentEntity.interface';
 import { CreateStudentDto, UpdateStudentDto } from '../core/domain/student.dto';
 
 @Injectable()
-export class InMemoryStudentRepository implements StudentRepository {
+export class PersistanceStudentRepository implements StudentRepository {
   private students: Student[] = [];
   private currentId = 1;
 
